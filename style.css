@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.perfil {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nome {
+    color: #667eea;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.descricao {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.habilidades-container h2 {
+    color: #667eea;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.habilidades {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.habilidade {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #667eea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.habilidade:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    border-left-color: #764ba2;
+}
+
+.nome-habilidade {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.nivel-habilidade {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.nivel-iniciante .nivel-habilidade {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.nivel-intermediário .nivel-habilidade {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.nivel-avançado .nivel-habilidade {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Responsivo - Tablets */
+@media (max-width: 768px) {
+    .perfil {
+        padding: 30px 20px;
+    }
+
+    .nome {
+        font-size: 2rem;
+    }
+
+    .habilidades {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .habilidade {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        align-items: flex-start;
+    }
+
+    .nivel-habilidade {
+        align-self: flex-end;
+    }
+}
+
+/* Responsivo - Celulares */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .perfil {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .nome {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .descricao {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .habilidades-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .habilidades {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .habilidade {
+        padding: 12px 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nome-habilidade {
+        font-size: 0.95rem;
+    }
+
+    .nivel-habilidade {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+}

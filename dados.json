@@ -1,0 +1,28 @@
+{
+  "perfil": {
+    "nome": "Caio Henrique Da Costa Nery",
+    "descricao": "Desenvolvedor iniciante"
+  },
+  "habilidades": [
+    {
+      "nome": "JavaScript Básico",
+      "nivel": "Iniciante"
+    },
+    {
+      "nome": "HTML Avançado",
+      "nivel": "Intermediário"
+    },
+    {
+      "nome": "CSS Intermediário",
+      "nivel": "Intermediário"
+    },
+    {
+      "nome": "React Básico",
+      "nivel": "Iniciante"
+    },
+    {
+      "nome": "Node.js Básico",
+      "nivel": "Iniciante"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Experiência</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="perfil" class="perfil">
+            <h1 id="nome" class="nome">Carregando...</h1>
+            <p id="descricao" class="descricao"></p>
+            <div class="habilidades-container">
+                <h2>Habilidades</h2>
+                <ul id="habilidades" class="habilidades"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dados = {
+            "perfil": {
+                "nome": "Caio Henrique Da Costa Nery",
+                "descricao": "Desenvolvedor iniciante"
+            },
+            "habilidades": [
+                {
+                    "nome": "JavaScript Básico",
+                    "nivel": "Iniciante"
+                },
+                {
+                    "nome": "HTML Avançado",
+                    "nivel": "Intermediário"
+                },
+                {
+                    "nome": "CSS Intermediário",
+                    "nivel": "Intermediário"
+                },
+                {
+                    "nome": "React Básico",
+                    "nivel": "Iniciante"
+                },
+                {
+                    "nome": "Node.js Básico",
+                    "nivel": "Iniciante"
+                }
+            ]
+        };
+
+        function carregarDados() {
+            // Preencher perfil
+            document.getElementById('nome').textContent = dados.perfil.nome;
+            document.getElementById('descricao').textContent = dados.perfil.descricao;
+            
+            // Preencher habilidades
+            const habilidadesList = document.getElementById('habilidades');
+            habilidadesList.innerHTML = '';
+            
+            dados.habilidades.forEach(habilidade => {
+                const listItem = document.createElement('li');
+                listItem.className = `habilidade nivel-${habilidade.nivel.toLowerCase()}`;
+                listItem.innerHTML = `
+                    <span class="nome-habilidade">${habilidade.nome}</span>
+                    <span class="nivel-habilidade">${habilidade.nivel}</span>
+                `;
+                habilidadesList.appendChild(listItem);
+            });
+        }
+
+        // Carregar dados quando a página estiver pronta
+        document.addEventListener('DOMContentLoaded', carregarDados);
+    </script>
+    
+</body>
+</html>
